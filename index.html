@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container flex">
+            <div class="logo">ReVeal</div>
+            <div class="menu">
+                <a href="#">ABOUT
+                </a>
+                <a href="#">SERVICE
+                </a>
+                <a href="#">EVENTS
+                </a>
+                <a href="#">TEAM</a>
+                <a href="#">CONTACT</a>
+
+            </div>
+            <!-- menu -->
+        </div>
+        <!-- container -->
+    </header>
+    <!-- header -->
+
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <h2>Creative Coders</h2>
+            <h1>WELCOME<br>
+                TO REVEAL</h1>
+            <div class="line"></div>
+            <a href="#" class="white_outline">Learn more</a>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+    <!-- hero -->
+
+    <section class="about">
+        <h5>Who we are</h5>
+        <h2>STORY ABOUT US</h2>
+        <div class="container">
+            <p>We are creative coders, lorem consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat incididunt ut labore et dolore aliquip ex ea commodo consequat incididunt.
+            </p>
+            <div class="flex">
+                <div>
+                    <div class="content">
+                        <div class="img_overlay">
+                            <i class="fa-solid fa-user-group"></i>
+                            <h4>support team</h4>
+                        </div>
+                        <img src="img/showcase.jpg" alt="">
+                    </div>
+                </div>
+                <div>
+                    <div class="content">
+                        <div class="img_overlay">
+                            <i class="fa-solid fa-user-group"></i>
+                            <h4>support team</h4>
+                        </div>
+                        <img src="img/showcase.jpg" alt="">
+                    </div>
+                </div>
+                <div>
+                    <div class="content">
+                        <div class="img_overlay">
+                            <i class="fa-solid fa-user-group"></i>
+                            <h4>support team</h4>
+                        </div>
+                        <img src="img/showcase.jpg" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- container -->
+        <div class="qunatity">
+            <button onclick="decrement()">-</button>
+            <span id="qnt">1</span>
+            <button onclick="increment()">+</button>
+        </div>
+    </section>
+    <!-- about -->
+    <section>
+        <div class="counter flex container">
+            <div id="min" class="min">60</div>
+            <div id="sec" class="sec">0</div>
+        </div>
+    </section>
+
+    <div class="chaticon" id="chaticon" onclick="showchat()">
+        chat
+    </div>
+
+    <div class="chabox" id="chabox"></div>
+
+    <script>
+        let chabox = document.getElementById('chabox')
+        function showchat() {
+            // document.getElementById('chabox').style.display='block'
+            chabox.classList.toggle('show')
+        }
+        let y = 1
+        let qnt = document.getElementById('qnt')
+        function increment() {
+            y++
+            qnt.innerText = y
+        }
+        function decrement() {
+            if (y > 1)
+                y--
+            qnt.innerText = y
+        }
+        let min = document.getElementById('min')
+        let sec = document.getElementById('sec')
+        let m = 59
+        let s = 60
+        setInterval(() => {
+            if (s > 0) {
+                if (m == 0 && s <= 1) {
+                    sec.innerText = 0
+                } else {
+                    s--
+                    sec.innerText = s
+                }
+            } else {
+                s = 59
+                if (m != 0) {
+                    m--
+                }
+                sec.innerText = s
+            }
+
+
+            min.innerText = m
+        }, 1000)
+    </script>
+
+</body>
+
+</html>
